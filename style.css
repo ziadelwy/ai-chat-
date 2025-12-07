@@ -1,0 +1,120 @@
+/* 1. التنسيق الأساسي للصفحة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* لدعم اللغة العربية */
+    text-align: right;
+    display: flex; /* لتمكين توسيط الشات بوت في الصفحة */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eef2f5; /* لون خلفية خفيف */
+}
+
+/* تم إزالة القسم الخاص بـ #chatbot-toggle-btn */
+/* تم إزالة القسم الخاص بـ .hidden */
+
+
+/* 3. حاوية الشات بوت الرئيسية - أصبحت الآن جزءاً من الصفحة */
+#chatbot-container {
+    position: relative; /* أصبحت جزءاً من الصفحة وليس عائماً */
+    margin: 20px;
+    width: 95%; /* اجعل العرض 95% من الشاشة */
+    max-width: 900px; /* للحد الأقصى من العرض */
+    height: 90vh; /* اجعل الارتفاع يأخذ 90% من ارتفاع الشاشة */
+    min-height: 550px; /* للحد الأدنى من الارتفاع */
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 4. رأس الشات بوت */
+.chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+/* 5. منطقة عرض الرسائل (الجسم) */
+.chatbot-body {
+    flex-grow: 1; 
+    padding: 15px;
+    overflow-y: auto; 
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; /* لترتيب الرسائل بشكل صحيح */
+}
+
+/* تنسيق رسالة عام */
+.message {
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* رسالة البوت (تظهر على اليمين) */
+.bot-message {
+    background-color: #e2e6ea;
+    align-self: flex-end; /* لترتيب الرسالة على يمين الشاشة */
+    border-bottom-left-radius: 0;
+    margin-left: auto; 
+}
+
+/* رسالة المستخدم (تظهر على اليسار) */
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-start; /* لترتيب الرسالة على يسار الشاشة */
+    border-bottom-right-radius: 0;
+    margin-right: auto; 
+}
+
+/* 6. حقل الإدخال والقدم */
+.chatbot-footer {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-left: 10px; 
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    border-color: #007bff;
+}
+
+#send-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #218838;
+}
